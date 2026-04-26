@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecMeet Classroom - Interactive Whiteboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Whiteboard specific layout if needed */
+  </style>
+</head>
+<body data-page="whiteboard">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-badge">RM</div><span>RecMeet Classroom</span></div>
+      <div class="top-actions">
+        <button class="btn btn-primary" id="themeToggle">Light Mode</button>
+        <div class="profile"><span>Teacher Tools</span><div class="avatar">WB</div></div>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="menu-item" data-page="dashboard" href="index.html">ERP Hub</a>
+        <a class="menu-item" data-page="teacher" href="teacher.html">Teacher Panel</a>
+        <a class="menu-item" data-page="student-portal" href="student-portal.html">Student Portal</a>
+        <a class="menu-item" data-page="parent-portal" href="parent-portal.html">Parent Portal</a>
+        <a class="menu-item" data-page="whiteboard" href="whiteboard.html">Whiteboard</a>
+        <a class="menu-item" data-page="ai-doubts" href="ai-doubts.html">AI Doubt Solver</a>
+        <a class="menu-item" data-page="alerts" href="alerts.html">Fee Alerts</a>
+      </aside>
+      <main class="content">
+        <section class="card" style="display: flex; flex-direction: column; height: 100%;">
+          <h2>Interactive Whiteboard (OneNote Style)</h2>
+          <p class="muted">Share your screen, turn on recording, and start teaching. Scroll down for infinite space!</p>
+          
+          <div class="wb-toolbar" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 16px; background: var(--surface); padding: 12px; border-radius: 8px; border: 1px solid var(--border);">
+            <div style="display: flex; gap: 8px; border-right: 1px solid var(--border); padding-right: 12px;">
+              <button class="btn btn-primary" id="wbBtnDraw">✏️ Pen</button>
+              <button class="btn btn-secondary" id="wbBtnHighlight">🖍️ Highlight</button>
+              <button class="btn btn-dark" id="wbBtnErase">🧽 Eraser</button>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; border-right: 1px solid var(--border); padding-right: 12px;">
+              <input type="color" id="wbColor" value="#ffffff" title="Pen Color" style="width: 32px; height: 32px; cursor: pointer; background: none; border: none; padding: 0;" />
+              <input type="range" id="wbSize" min="1" max="50" value="3" title="Thickness" style="width: 100px;" />
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn btn-dark" id="wbBtnGrid"># Grid</button>
+              <button class="btn btn-primary" id="wbBtnType">🎭 Switch Board</button>
+              <button class="btn btn-danger" id="wbBtnClear">🗑️ Clear</button>
+            </div>
+          </div>
+
+          <div class="wb-container wb-grid-bg" id="wbContainer" style="position: relative; width: 100%; height: 65vh; overflow: auto; background-color: var(--background); border: 1px solid var(--border); border-radius: 8px;">
+            <!-- Infinite canvas (2000x3000) -->
+            <canvas id="drawingBoard" width="2000" height="4000" style="display: block; cursor: crosshair;"></canvas>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

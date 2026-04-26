@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecMeet Classroom - AI Doubt Solver</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="ai-doubts">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-badge">RM</div><span>RecMeet Classroom</span></div>
+      <div class="top-actions">
+        <button class="btn btn-primary" id="themeToggle">Light Mode</button>
+        <div class="profile"><span>AI Support</span><div class="avatar">AI</div></div>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="menu-item" data-page="dashboard" href="index.html">ERP Hub</a>
+        <a class="menu-item" data-page="teacher" href="teacher.html">Teacher Panel</a>
+        <a class="menu-item" data-page="student-portal" href="student-portal.html">Student Portal</a>
+        <a class="menu-item" data-page="parent-portal" href="parent-portal.html">Parent Portal</a>
+                <a class="menu-item" data-page="whiteboard" href="whiteboard.html">Whiteboard</a>
+        <a class="menu-item" data-page="ai-doubts" href="ai-doubts.html">AI Doubt Solver</a>
+        <a class="menu-item" data-page="alerts" href="alerts.html">Fee Alerts</a>
+      </aside>
+      <main class="content">
+        <section class="two-col">
+          <article class="card">
+            <h2>AI Doubt Chat</h2>
+            <p class="muted">Student asks question -> AI explains steps -> unresolved doubts escalate to teacher.</p>
+            <div class="chat-box" id="doubtChatBox">
+              <!-- Dynamic chat messages will appear here -->
+              <div class="msg ai">Hello! I am your AI assistant. Ask me anything about math, science, or your classes!</div>
+            </div>
+            <div class="inline-form" id="doubtForm">
+              <input class="field" type="text" id="doubtInput" placeholder="Type doubt..." autocomplete="off" required />
+              <button class="btn btn-success" id="askDoubtBtn">Ask AI</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Escalation Rules</h3>
+            <ul class="list">
+              <li class="list-item"><span>Confidence below 70%</span><span class="pill warn">Escalate</span></li>
+              <li class="list-item"><span>Student asks "still not clear"</span><span class="pill warn">Escalate</span></li>
+              <li class="list-item"><span>Teacher reply SLA</span><span class="pill success">Within 15 min</span></li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+

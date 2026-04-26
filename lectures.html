@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecMeet Classroom - Lectures</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="lectures">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-badge">RM</div><span>RecMeet Classroom</span></div>
+      <div class="top-actions">
+        <button class="btn btn-primary" id="themeToggle">Light Mode</button>
+        <div class="profile"><span>Ms. Teacher</span><div class="avatar">MT</div></div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="menu-item" data-page="dashboard" href="index.html">ERP Hub</a>
+        <a class="menu-item" data-page="teacher" href="teacher.html">Teacher Panel</a>
+        <a class="menu-item" data-page="student-portal" href="student-portal.html">Student Portal</a>
+        <a class="menu-item" data-page="parent-portal" href="parent-portal.html">Parent Portal</a>
+                <a class="menu-item" data-page="whiteboard" href="whiteboard.html">Whiteboard</a>
+        <a class="menu-item" data-page="ai-doubts" href="ai-doubts.html">AI Doubt Solver</a>
+        <a class="menu-item" data-page="alerts" href="alerts.html">Fee Alerts</a>
+        <a class="menu-item" data-page="record" href="record.html">Record Lecture</a>
+        <a class="menu-item" data-page="lectures" href="lectures.html">Lectures</a>
+        <a class="menu-item" data-page="students" href="students.html">Students</a>
+        <a class="menu-item" data-page="marks" href="marks.html">Marks</a>
+      </aside>
+      <main class="content">
+        <section class="card">
+          <h2>Saved Lectures</h2>
+          <div class="lecture-toolbar">
+            <input id="lectureSearch" class="field" type="text" placeholder="Search lecture..." />
+            <select id="lectureFilter" class="field">
+              <option value="all">All Subjects</option>
+              <option value="math">Math</option>
+              <option value="science">Science</option>
+            </select>
+            <select id="lectureSort" class="field">
+              <option value="latest">Latest</option>
+              <option value="oldest">Oldest</option>
+              <option value="title">Title A-Z</option>
+            </select>
+          </div>
+
+          <div class="lecture-list">
+            <!-- Dynamic lectures will be injected here via app.js -->
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+

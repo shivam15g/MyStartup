@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecMeet Classroom - Marks</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="marks">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-badge">RM</div><span>RecMeet Classroom</span></div>
+      <div class="top-actions">
+        <button class="btn btn-primary" id="themeToggle">Light Mode</button>
+        <div class="profile"><span>Ms. Teacher</span><div class="avatar">MT</div></div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="menu-item" data-page="dashboard" href="index.html">ERP Hub</a>
+        <a class="menu-item" data-page="teacher" href="teacher.html">Teacher Panel</a>
+        <a class="menu-item" data-page="student-portal" href="student-portal.html">Student Portal</a>
+        <a class="menu-item" data-page="parent-portal" href="parent-portal.html">Parent Portal</a>
+                <a class="menu-item" data-page="whiteboard" href="whiteboard.html">Whiteboard</a>
+        <a class="menu-item" data-page="ai-doubts" href="ai-doubts.html">AI Doubt Solver</a>
+        <a class="menu-item" data-page="alerts" href="alerts.html">Fee Alerts</a>
+        <a class="menu-item" data-page="record" href="record.html">Record Lecture</a>
+        <a class="menu-item" data-page="lectures" href="lectures.html">Lectures</a>
+        <a class="menu-item" data-page="students" href="students.html">Students</a>
+        <a class="menu-item" data-page="marks" href="marks.html">Marks</a>
+      </aside>
+      <main class="content">
+        <section class="card">
+          <h2>Marks Management</h2>
+          <p class="muted">Quickly update marks for coaching students.</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Name</th><th>Current Marks</th><th>Action</th></tr>
+              </thead>
+              <tbody>
+                <!-- Dynamic marks data will be injected here via app.js -->
+              </tbody>
+            </table>
+          </div>
+          <button class="btn btn-success" style="margin-top:12px;">Add Marks</button>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+

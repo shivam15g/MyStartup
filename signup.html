@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | RecMeet</title>
+    <link rel="stylesheet" href="landing.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background: var(--bg-alt); display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        .auth-card { background: white; padding: 40px; border-radius: 24px; border: 1px solid var(--border); box-shadow: var(--shadow); width: 100%; max-width: 400px; text-align: center; }
+        .auth-card h2 { font-size: 28px; margin-bottom: 8px; }
+        .auth-card p { color: var(--text-muted); margin-bottom: 32px; }
+        .form-group { text-align: left; margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--secondary); }
+        .form-group input { width: 100%; padding: 12px 16px; border-radius: 10px; border: 1px solid var(--border); outline: none; font-size: 15px; }
+        .form-group input:focus { border-color: var(--primary); }
+    </style>
+</head>
+<body>
+
+    <div class="auth-card">
+        <a href="index.html" class="brand" style="justify-content: center; margin-bottom: 24px; color: var(--secondary);">Rec<span>Meet</span></a>
+        <h2>Invite Only</h2>
+        <p>Signups are currently closed for the private beta. Please join our waitlist on the home page.</p>
+        
+        <div style="padding: 40px 20px; background: var(--bg-alt); border-radius: 16px; margin-bottom: 24px;">
+            <i data-lucide="lock" style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 16px;"></i>
+            <p style="margin-bottom: 0; font-weight: 600;">Early Access Only</p>
+        </div>
+
+        <a href="index.html" class="btn btn-primary" style="width: 100%; text-decoration: none;">Return to Home</a>
+        
+        <p style="margin-top: 24px; font-size: 14px;">Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;">Login</a></p>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                // Smart Port Detection: Always talk to the backend on port 3000
+                const backendUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                    ? `http://${window.location.hostname}:3000/api/signup` 
+                    : '/api/signup';
+
+                const res = await fetch(backendUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password })
+                });
+
+                if (res.ok) {
+                    alert('✅ Account created successfully! Now please login.');
+                    window.location.href = 'login.html';
+                } else {
+                    const data = await res.json();
+                    alert('❌ Signup Failed: ' + (data.message || 'Email might already be registered.'));
+                }
+            } catch (error) {
+                alert('⚠️ Connection Error! Please ensure you have run "node server.js" in your terminal.');
+            }
+        });
+    </script>
+</body>
+</html>

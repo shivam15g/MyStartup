@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecMeet Classroom - Teacher Panel</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="teacher">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-badge">RM</div><span>RecMeet Classroom</span></div>
+      <div class="top-actions">
+        <button class="btn btn-primary" id="themeToggle">Light Mode</button>
+        <div class="profile"><span>Ms. Teacher</span><div class="avatar">MT</div></div>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="menu-item" data-page="dashboard" href="index.html">ERP Hub</a>
+        <a class="menu-item" data-page="teacher" href="teacher.html">Teacher Panel</a>
+        <a class="menu-item" data-page="student-portal" href="student-portal.html">Student Portal</a>
+        <a class="menu-item" data-page="parent-portal" href="parent-portal.html">Parent Portal</a>
+                <a class="menu-item" data-page="whiteboard" href="whiteboard.html">Whiteboard</a>
+        <a class="menu-item" data-page="ai-doubts" href="ai-doubts.html">AI Doubt Solver</a>
+        <a class="menu-item" data-page="alerts" href="alerts.html">Fee Alerts</a>
+      </aside>
+      <main class="content">
+        <section class="stats-grid">
+          <article class="stat-card"><p class="stat-label">Total Lectures</p><p class="stat-value" id="statLectures">-</p></article>
+          <article class="stat-card"><p class="stat-label">Students</p><p class="stat-value" id="statStudents">-</p></article>
+          <article class="stat-card"><p class="stat-label">Avg Class Score</p><p class="stat-value" id="statAvg">-</p></article>
+          <article class="stat-card"><p class="stat-label">Pending Doubts</p><p class="stat-value">7</p></article>
+        </section>
+        <section class="grid-2" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;">
+          <article class="card">
+            <h3>Operations</h3>
+            <div class="btn-group">
+              <a class="btn btn-primary" href="record.html" style="text-decoration:none;">Record Lecture</a>
+              <a class="btn btn-dark" href="lectures.html" style="text-decoration:none;">Lectures</a>
+              <a class="btn btn-success" href="marks.html" style="text-decoration:none;">Marks</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Auto System Status</h3>
+            <ul class="list">
+              <li class="list-item"><span>AI doubt engine</span><span class="pill success">Active</span></li>
+              <li class="list-item"><span>WhatsApp gateway</span><span class="pill success">Connected</span></li>
+              <li class="list-item"><span>Fee call bot</span><span class="pill warn">Scheduled 7 PM</span></li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <script>
+    const user = localStorage.getItem('recmeet_user');
+    if (!user) window.location.href = 'login.html';
+  </script>
+</body>
+</html>

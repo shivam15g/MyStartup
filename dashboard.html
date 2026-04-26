@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecMeet Classroom - ERP Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="landing.css" />
+</head>
+<body data-page="dashboard">
+  <div class="watermark">RECMEET PREVIEW</div>
+  
+  <div class="upgrade-overlay">
+    <span>🔒 You are using the Free Plan. Some features are limited.</span>
+    <a href="index.html#pricing" class="btn btn-primary" style="padding: 10px 20px;">Upgrade for ₹99</a>
+  </div>
+  <script>
+    // --- Advanced Gatekeeper ---
+    const userStr = localStorage.getItem('recmeet_user');
+    if (!userStr) {
+      window.location.href = 'login.html';
+    } else {
+      const user = JSON.parse(userStr);
+      // Only the founder sees the real tools
+      const isFounder = user.email === 'shivam15goswami@gmail.com';
+      
+      window.addEventListener('DOMContentLoaded', () => {
+        if (!isFounder) {
+          // Hide tools and show Demo Preview for regular users
+          document.querySelector('.app').style.display = 'none';
+          document.body.innerHTML += `
+            <div class="demo-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:var(--secondary); color:white; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px; z-index:20000;">
+                <div class="brand" style="margin-bottom:40px; font-size:32px;">Rec<span>Meet</span></div>
+                <h2 style="font-size:36px; margin-bottom:16px;">Welcome, ${user.name}!</h2>
+                <p style="color:#94a3b8; font-size:18px; max-width:600px; margin-bottom:40px;">Your account is approved! We are currently in an exclusive invite-only preview. Watch the demo below to see what's coming next week.</p>
+                
+                <div style="width:100%; max-width:800px; aspect-ratio:16/9; background:#1e293b; border-radius:20px; border:2px dashed #334155; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; cursor:pointer;">
+                    <div style="text-align:center;">
+                        <div style="width:80px; height:80px; background:var(--primary); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
+                            <i data-lucide="play" style="fill:white; margin-left:5px;"></i>
+                        </div>
+                        <p style="font-weight:600;">Click to Watch Demo Video</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top:40px; color:#64748b;">Founder Access: Locked 🔒</p>
+                <a href="index.html" style="margin-top:20px; color:var(--primary); text-decoration:none; font-weight:600;">Return to Home</a>
+            </div>
+          `;
+          lucide.createIcons();
+        }
+      });
+    }
+  </script>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-badge">RM</div><span>RecMeet Classroom</span></div>
+      <div class="top-actions">
+        <button class="btn btn-primary" id="themeToggle">Light Mode</button>
+        <div class="profile"><span>Ms. Teacher</span><div class="avatar">MT</div></div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="menu-item" data-page="dashboard" href="dashboard.html">ERP Hub</a>
+        <a class="menu-item" data-page="teacher" href="teacher.html">Teacher Panel</a>
+        <a class="menu-item" data-page="student-portal" href="student-portal.html">Student Portal</a>
+        <a class="menu-item" data-page="parent-portal" href="parent-portal.html">Parent Portal</a>
+                <a class="menu-item" data-page="whiteboard" href="whiteboard.html">Whiteboard</a>
+        <a class="menu-item" data-page="ai-doubts" href="ai-doubts.html">AI Doubt Solver</a>
+        <a class="menu-item" data-page="alerts" href="alerts.html">Fee Alerts</a>
+      </aside>
+
+      <main class="content">
+        <section class="card">
+          <h2>Coaching ERP Hub</h2>
+          <p class="muted">Single platform for teacher operations, student learning, parent tracking, AI doubt solving, and fee alerts via WhatsApp/call.</p>
+          <div class="btn-group" style="margin-top:12px;flex-wrap:wrap;">
+            <span class="pill success">7 Days Free Trial</span>
+            <span class="pill">Then ₹99 / month</span>
+            <a class="btn btn-success" href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20a%207-day%20free%20trial%20for%20RecMeet%20Classroom" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">Start Free Trial</a>
+            <a class="btn btn-primary" href="#" style="text-decoration:none;">Upgrade - ₹99/month</a>
+          </div>
+        </section>
+
+        <section class="hero-wallpaper" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1400&q=80');">
+          <div class="hero-content">
+            <span class="pill success">Smart Coaching Experience</span>
+            <h2 style="margin:0;">Attractive ERP With Student Visual Presence</h2>
+            <p class="muted" style="color:#dbe8fb;">Role-based portals with AI, WhatsApp alerts, and fee automation.</p>
+          </div>
+        </section>
+
+        <section class="role-grid">
+          <article class="role-card">
+            <span class="pill success">Teacher</span>
+            <h3>Teacher Panel</h3>
+            <p class="muted">Lectures, marks, class operations, performance view.</p>
+            <a class="btn btn-primary" href="teacher.html" style="text-decoration:none;">Open Panel</a>
+          </article>
+          <article class="role-card">
+            <span class="pill">Student</span>
+            <h3>Student Portal</h3>
+            <p class="muted">Watch lectures, ask AI doubts, track marks and pending fees.</p>
+            <a class="btn btn-primary" href="student-portal.html" style="text-decoration:none;">Open Portal</a>
+          </article>
+          <article class="role-card">
+            <span class="pill warn">Parent</span>
+            <h3>Parent Portal</h3>
+            <p class="muted">Child progress, fee reminders, attendance and updates.</p>
+            <a class="btn btn-primary" href="parent-portal.html" style="text-decoration:none;">Open Portal</a>
+          </article>
+        </section>
+
+        <section class="kpi-grid">
+          <article class="stat-card"><p class="stat-label">WhatsApp Alerts Today</p><p class="stat-value" id="dashWhatsapp">-</p></article>
+          <article class="stat-card"><p class="stat-label">Auto Calls Triggered</p><p class="stat-value" id="dashCalls">-</p></article>
+          <article class="stat-card"><p class="stat-label">AI Doubts Solved</p><p class="stat-value" id="dashDoubts">-</p></article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

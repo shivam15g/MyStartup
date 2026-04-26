@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | RecMeet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .job-card { display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--border); padding: 30px; border-radius: var(--radius-md); margin-bottom: 20px; background: white; }
+        .job-card:hover { border-color: var(--primary); transform: translateX(5px); transition: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-flex">
+            <div class="logo"><a href="index.html" style="color: var(--secondary);">Rec<span>Meet</span></a></div>
+            <nav class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="careers.html" style="color: var(--primary); font-weight: 700;">Careers</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Portal Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="section container">
+        <div class="section-title">
+            <h2>Join Our Team</h2>
+            <p>We are a remote-first team based in India building the future of classroom management.</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="job-card">
+                <div>
+                    <h3>Senior Fullstack Developer</h3>
+                    <p style="color: var(--text-muted);">Remote • Full-time</p>
+                </div>
+                <a href="mailto:shivam15goswami@gmail.com" class="btn btn-primary">Apply</a>
+            </div>
+            <div class="job-card">
+                <div>
+                    <h3>Product Designer</h3>
+                    <p style="color: var(--text-muted);">Remote • Full-time</p>
+                </div>
+                <a href="mailto:shivam15goswami@gmail.com" class="btn btn-primary">Apply</a>
+            </div>
+            <div class="job-card">
+                <div>
+                    <h3>Content Creator</h3>
+                    <p style="color: var(--text-muted);">Remote • Part-time</p>
+                </div>
+                <a href="mailto:shivam15goswami@gmail.com" class="btn btn-primary">Apply</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Rec<span>Meet</span></div>
+            <p class="copyright">&copy; 2024 RecMeet | India (Remote)</p>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

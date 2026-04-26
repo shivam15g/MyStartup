@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecMeet Classroom - Record Lecture</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="record">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-badge">RM</div><span>RecMeet Classroom</span></div>
+      <div class="top-actions">
+        <button class="btn btn-primary" id="themeToggle">Light Mode</button>
+        <div class="profile"><span>Ms. Teacher</span><div class="avatar">MT</div></div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="menu-item" data-page="dashboard" href="index.html">ERP Hub</a>
+        <a class="menu-item" data-page="teacher" href="teacher.html">Teacher Panel</a>
+        <a class="menu-item" data-page="student-portal" href="student-portal.html">Student Portal</a>
+        <a class="menu-item" data-page="parent-portal" href="parent-portal.html">Parent Portal</a>
+                <a class="menu-item" data-page="whiteboard" href="whiteboard.html">Whiteboard</a>
+        <a class="menu-item" data-page="ai-doubts" href="ai-doubts.html">AI Doubt Solver</a>
+        <a class="menu-item" data-page="alerts" href="alerts.html">Fee Alerts</a>
+        <a class="menu-item" data-page="record" href="record.html">Record Lecture</a>
+        <a class="menu-item" data-page="lectures" href="lectures.html">Lectures</a>
+        <a class="menu-item" data-page="students" href="students.html">Students</a>
+        <a class="menu-item" data-page="marks" href="marks.html">Marks</a>
+      </aside>
+      <main class="content">
+        <section class="card">
+          <h2>Record Lecture</h2>
+          <p class="muted">Aapki recording Global Widget (niche right corner) me chal rahi hai. Video download karne ke baad uska link yahan save karein.</p>
+          <form id="lectureForm" style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px; max-width: 400px;">
+            <input type="text" id="lecTitle" class="field" placeholder="Lecture Title" required />
+            <input type="date" id="lecDate" class="field" required />
+            <select id="lecClass" class="field" required>
+              <option value="" disabled selected>Select Class / Grade</option>
+              <optgroup label="School">
+                <option value="Class 1">Class 1</option>
+                <option value="Class 2">Class 2</option>
+                <option value="Class 3">Class 3</option>
+                <option value="Class 4">Class 4</option>
+                <option value="Class 5">Class 5</option>
+                <option value="Class 6">Class 6</option>
+                <option value="Class 7">Class 7</option>
+                <option value="Class 8">Class 8</option>
+                <option value="Class 9">Class 9</option>
+                <option value="Class 10">Class 10</option>
+                <option value="Class 11">Class 11</option>
+                <option value="Class 12">Class 12</option>
+              </optgroup>
+              <optgroup label="Higher Education">
+                <option value="Bachelors">Bachelors (B.Tech/BSc)</option>
+                <option value="Masters">Masters (MBA/M.Tech)</option>
+                <option value="PhD">PhD / Research</option>
+              </optgroup>
+            </select>
+
+            <select id="lecSubject" class="field" required>
+              <option value="" disabled selected>Select Subject</option>
+              <optgroup label="School Subjects">
+                <option value="Mathematics">Mathematics</option>
+                <option value="Science">Science</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Sanskrit">Sanskrit</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Biology">Biology</option>
+                <option value="History">History</option>
+                <option value="Geography">Geography</option>
+                <option value="Civics">Civics</option>
+                <option value="Physical Education">Physical Education</option>
+                <option value="Art">Art & Craft</option>
+              </optgroup>
+              <optgroup label="Technical & Engineering">
+                <option value="Computer Science">Computer Science</option>
+                <option value="Programming">Programming (Python/Java/C++)</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Data Structures">Data Structures & Algos</option>
+                <option value="AI & ML">AI & Machine Learning</option>
+                <option value="Cyber Security">Cyber Security</option>
+                <option value="Cloud Computing">Cloud Computing</option>
+                <option value="Software Engineering">Software Engineering</option>
+                <option value="Robotics">Robotics</option>
+                <option value="IOT">Internet of Things (IOT)</option>
+                <option value="Embedded Systems">Embedded Systems</option>
+                <option value="Blockchain">Blockchain Technology</option>
+              </optgroup>
+              <optgroup label="MBA & Management">
+                <option value="MBA Finance">MBA Finance</option>
+                <option value="MBA Marketing">MBA Marketing</option>
+                <option value="MBA HR">MBA HR</option>
+                <option value="MBA Operations">MBA Operations</option>
+                <option value="Business Analytics">Business Analytics</option>
+                <option value="General Management">General Management</option>
+                <option value="Entrepreneurship">Entrepreneurship</option>
+                <option value="International Business">International Business</option>
+              </optgroup>
+              <optgroup label="MTech Specialized">
+                <option value="MTech CS">MTech Computer Science</option>
+                <option value="MTech VLSI">MTech VLSI & Embedded</option>
+                <option value="MTech Electrical">MTech Electrical</option>
+                <option value="MTech Mechanical">MTech Mechanical</option>
+              </optgroup>
+            </select>
+            <input type="url" id="lecUrl" class="field" placeholder="Video URL (e.g. YouTube/Drive link)" required />
+            <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Upload Lecture Link</button>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+

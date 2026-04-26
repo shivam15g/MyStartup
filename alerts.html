@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecMeet Classroom - Fee Alerts</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="alerts">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-badge">RM</div><span>RecMeet Classroom</span></div>
+      <div class="top-actions">
+        <button class="btn btn-primary" id="themeToggle">Light Mode</button>
+        <div class="profile"><span>Automation</span><div class="avatar">AL</div></div>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="menu-item" data-page="dashboard" href="index.html">ERP Hub</a>
+        <a class="menu-item" data-page="teacher" href="teacher.html">Teacher Panel</a>
+        <a class="menu-item" data-page="student-portal" href="student-portal.html">Student Portal</a>
+        <a class="menu-item" data-page="parent-portal" href="parent-portal.html">Parent Portal</a>
+                <a class="menu-item" data-page="whiteboard" href="whiteboard.html">Whiteboard</a>
+        <a class="menu-item" data-page="ai-doubts" href="ai-doubts.html">AI Doubt Solver</a>
+        <a class="menu-item" data-page="alerts" href="alerts.html">Fee Alerts</a>
+      </aside>
+      <main class="content">
+        <section class="kpi-grid">
+          <article class="stat-card"><p class="stat-label">Due Students</p><p class="stat-value" id="alertDueStudents">-</p></article>
+          <article class="stat-card"><p class="stat-label">WhatsApp Sent</p><p class="stat-value" id="alertWhatsapp">-</p></article>
+          <article class="stat-card"><p class="stat-label">Auto Calls Pending</p><p class="stat-value" id="alertCalls">-</p></article>
+        </section>
+
+        <section class="two-col">
+          <article class="card">
+            <h2>Fee Defaulter Alert Queue</h2>
+            <ul class="list" id="defaulterList">
+              <!-- Dynamic fee defaulters will be injected here -->
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Automation Settings</h3>
+            <div class="lecture-toolbar" style="grid-template-columns:1fr;">
+              <input class="field" type="text" placeholder="WhatsApp API Provider (Twilio / Meta)" />
+              <input class="field" type="text" placeholder="Template ID for fee reminder message" />
+              <input class="field" type="text" placeholder="Auto-call provider (Twilio / Exotel)" />
+              <button class="btn btn-success">Save Automation</button>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+

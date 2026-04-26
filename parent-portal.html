@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecMeet Classroom - Parent Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="parent-portal">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-badge">RM</div><span>RecMeet Classroom</span></div>
+      <div class="top-actions">
+        <button class="btn btn-primary" id="themeToggle">Light Mode</button>
+        <div class="profile"><span>Parent View</span><div class="avatar">PR</div></div>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="menu-item" data-page="dashboard" href="index.html">ERP Hub</a>
+        <a class="menu-item" data-page="teacher" href="teacher.html">Teacher Panel</a>
+        <a class="menu-item" data-page="student-portal" href="student-portal.html">Student Portal</a>
+        <a class="menu-item" data-page="parent-portal" href="parent-portal.html">Parent Portal</a>
+                <a class="menu-item" data-page="whiteboard" href="whiteboard.html">Whiteboard</a>
+        <a class="menu-item" data-page="ai-doubts" href="ai-doubts.html">AI Doubt Solver</a>
+        <a class="menu-item" data-page="alerts" href="alerts.html">Fee Alerts</a>
+      </aside>
+      <main class="content">
+        <section class="hero-wallpaper" style="background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80');">
+          <div class="hero-content">
+            <span class="pill warn">Parent Insights</span>
+            <h2 style="margin:0;">Track Child Progress With Visual Reports</h2>
+            <p class="muted" style="color:#dbe8fb;">Attendance, marks, fee updates, and alerts delivered on WhatsApp.</p>
+          </div>
+        </section>
+
+        <section class="kpi-grid">
+          <article class="stat-card"><p class="stat-label">Child Attendance</p><p class="stat-value" id="parentAttendance">-</p></article>
+          <article class="stat-card"><p class="stat-label">Current Marks</p><p class="stat-value" id="parentMarks">-</p></article>
+          <article class="stat-card"><p class="stat-label">Fee Due</p><p class="stat-value" id="parentFee">-</p></article>
+        </section>
+        <section class="card">
+          <h2>Parent Dashboard</h2>
+          <ul class="list">
+            <li class="list-item"><span>Next Fee Due Date: 05 May 2026</span><span class="pill danger">Pending</span></li>
+            <li class="list-item"><span>Last WhatsApp update sent</span><span class="pill success">Today 9:30 AM</span></li>
+            <li class="list-item"><span>Auto-call fallback</span><span class="pill warn">If unpaid after due date</span></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+

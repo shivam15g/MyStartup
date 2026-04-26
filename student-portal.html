@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecMeet Classroom - Student Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="student-portal">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><div class="brand-badge">RM</div><span>RecMeet Classroom</span></div>
+      <div class="top-actions">
+        <button class="btn btn-primary" id="themeToggle">Light Mode</button>
+        <div class="profile"><span>Aarav (Student)</span><div class="avatar">AS</div></div>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="menu-item" data-page="dashboard" href="index.html">ERP Hub</a>
+        <a class="menu-item" data-page="teacher" href="teacher.html">Teacher Panel</a>
+        <a class="menu-item" data-page="student-portal" href="student-portal.html">Student Portal</a>
+        <a class="menu-item" data-page="parent-portal" href="parent-portal.html">Parent Portal</a>
+                <a class="menu-item" data-page="whiteboard" href="whiteboard.html">Whiteboard</a>
+        <a class="menu-item" data-page="ai-doubts" href="ai-doubts.html">AI Doubt Solver</a>
+        <a class="menu-item" data-page="alerts" href="alerts.html">Fee Alerts</a>
+      </aside>
+      <main class="content">
+        <section class="hero-wallpaper" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=80');">
+          <div class="hero-content">
+            <span class="pill success">Student Space</span>
+            <h2 style="margin:0;">Learn With Visual Classroom Experience</h2>
+            <p class="muted" style="color:#dbe8fb;">Daily classes, AI doubts, performance tracking in one beautiful dashboard.</p>
+            <div class="avatar-stack">
+              <img class="avatar-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="student" />
+              <img class="avatar-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="student" />
+              <img class="avatar-img" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=120&q=80" alt="student" />
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-grid">
+          <article class="stat-card"><p class="stat-label">Watched Lectures</p><p class="stat-value" id="studentTotalLectures">-</p></article>
+          <article class="stat-card"><p class="stat-label">Current Score</p><p class="stat-value" id="studentScore">-</p></article>
+          <article class="stat-card"><p class="stat-label">Pending Doubts</p><p class="stat-value">2</p></article>
+          <article class="stat-card"><p class="stat-label">Fee Status</p><p class="stat-value">Due</p></article>
+        </section>
+        <section class="card">
+          <h2>Student Learning Desk</h2>
+          <p class="muted">Watch saved classes, ask doubts to AI, and track your marks and fee reminders.</p>
+          <div class="btn-group" style="margin-top:12px;">
+            <a class="btn btn-primary" href="lectures.html" style="text-decoration:none;">Watch Lectures</a>
+            <a class="btn btn-success" href="ai-doubts.html" style="text-decoration:none;">Ask AI Doubt</a>
+            <a class="btn btn-dark" href="marks.html" style="text-decoration:none;">My Marks</a>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Top Performing Students</h3>
+          <div class="student-grid">
+            <!-- Dynamic student cards will be injected here via app.js -->
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+
